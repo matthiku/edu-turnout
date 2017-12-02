@@ -9,13 +9,21 @@
     <add-event></add-event>
 
     <hr>
-    <p>{{ $store.state }}</p>
+    <div class="row mb-2">
+      <event-item
+        v-for="(event, index) in $store.state.events"
+        :key="index"
+        :event="event"
+      ></event-item>
+    </div>
+
   </div>
 </template>
 
 <script>
 import { firebaseApp, eventsRef } from '../firebaseApp'
 import AddEvent from './AddEvent.vue'
+import EventItem from './EventItem.vue'
 
 export default {
   methods: {
@@ -25,7 +33,8 @@ export default {
     }
   },
   components: {
-    AddEvent
+    AddEvent,
+    EventItem
   },
   mounted () {
     eventsRef.on('value', snap => {
