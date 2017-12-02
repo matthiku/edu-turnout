@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <button @click.prevent="addEvent" type="button" class="btn btn-primary">Submit</button>
+      <button @click.prevent="addEvent" type="button" class="btn btn-primary">&#10003; Submit</button>
 
       <div v-show="message" class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> {{ message }}

@@ -9,11 +9,12 @@
     <add-event></add-event>
 
     <hr>
-    <div class="row mb-2">
+    <div class="card-columns">
       <event-item
         v-for="(event, index) in $store.state.events"
         :key="index"
         :event="event"
+        :user="$store.state.user"
       ></event-item>
     </div>
 
@@ -37,10 +38,13 @@ export default {
     EventItem
   },
   mounted () {
+    // receive the current events from the DB and save the to the store
     eventsRef.on('value', snap => {
       let events = []
       snap.forEach(event => {
-        events.push(event.val())
+        let evt = event.val()
+        evt.id = event.key
+        events.push(evt)
       })
       this.$store.dispatch('setEvents', events)
     })

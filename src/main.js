@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
+import VuejsDialog from "vuejs-dialog"
+
 import { firebaseApp } from './firebaseApp'
 
 import App from './components/App.vue'
@@ -13,6 +15,7 @@ import store from './store'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
+Vue.use(VuejsDialog)
 
 const router = new VueRouter({
   mode: 'history',

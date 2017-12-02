@@ -13,6 +13,7 @@
     "firebase": "^4.7.0",
     "vue": "^2.4.4",
     "vue-router": "^3.0.1",
+    "vuejs-dialog": "^0.4.5",
     "vuex": "^3.0.1"
   },
   "browserslist": [
